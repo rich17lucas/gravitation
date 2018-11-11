@@ -24,7 +24,8 @@ class Actor(cocos.cocosnode.CocosNode):
         self.velocity = self.truncate(self.velocity + steering, self.max_velocity)
         self.position += self.velocity * dt
 
-    def truncate(self, vector, m):
+    @staticmethod
+    def truncate(vector, m):
         magnitude = abs(vector)
         if magnitude > m:
             vector *= m / magnitude

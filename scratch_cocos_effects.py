@@ -5,9 +5,20 @@ import cocos.particle_systems as ps
 class MainLayer(cocos.layer.Layer):
     def __init__(self):
         super(MainLayer, self).__init__()
-        particles = ps.Spiral()
-        particles.position = (512, 300)
-        self.add(particles)
+        candle1 = ps.Fireworks()
+        candle1.position = (512, 100)
+        candle1.angle = 60
+
+        candle2 = ps.Fireworks()
+        candle2.position = (490, 100)
+        candle2.angle = 120
+        candle2.speed = 270
+        candle2.speed_var = 100
+        candle2.radial_accel=2
+
+
+        self.add(candle1)
+        self.add(candle2)
 
 
 if __name__ == '__main__':
